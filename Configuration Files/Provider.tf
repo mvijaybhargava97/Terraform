@@ -6,3 +6,7 @@ provider "azurerm"{
     features {}
 }
 #
+export ARM_USE_MSI=true
+export ARM_SUBSCRIPTION_ID=848bffad-a9ae-486f-a160-76388acf2e31
+export ARM_TENANT_ID=808cc83e-a546-47e7-a03f-73a1ebba24f3
+export ARM_MSI_ENDPOINT=$MSI_ENDPOINT
