@@ -4,6 +4,6 @@ output "primary_access_key"{
 }
 
 output "subnets_list"{
-    value = data.azurerm_subnet.subnet.id
+    value = data.azurerm_subnet.subnet[each.key].id
     description = "The Subnet IDs of all the subnets in the vnet"
 }
