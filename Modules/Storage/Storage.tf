@@ -3,12 +3,12 @@ data "azurerm_virtual_network" "vnet" {
   resource_group_name = var.vnet-rg-name
 }
 
-data "azurerm_subnet" "subnet" {
-  for_each             = toset(data.azurerm_virtual_network.vnet.subnets)
+/*data "azurerm_subnet" "subnet" {
+  for_each             = data.azurerm_virtual_network.vnet.subnets
   name                 = each.value
   virtual_network_name = data.azurerm_virtual_network.vnet.name
   resource_group_name  = var.vnet-rg-name
-}
+}*/
 
 resource "azurerm_storage_account" "storage" {
   name                     = var.storage-name
