@@ -1,22 +1,22 @@
-#Function Plan
-resource "azurerm_app_service_plan" "functionplan" {
-  name                = var.plan-name
-  resource_group_name = var.app-rg
-  location            = var.app-location
-  sku {
-    tier = "Standard"
-    size = "S1"
-  }
-}
+resource "azurerm_virtual_network" "vnet" {
+  name                = var.vnet-name
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  address_space       = ["10.0.0.0/16"]
+  dns_servers         = ["10.0.0.4", "10.0.0.5"]
 
-#Function App
-resource "azurerm_function_app" "function" {
-  name                        = var.func-name
-  resource_group_name         = var.app-rg
-  location                    = var.app-location
-  storage_account_name        = var.storage-name
-  app_service_plan_id         = azurerm_app_service_plan.functionplan.id
-  app_settings                = var.app-settings
-  storage_account_access_key  = var.storage_accesskey
-  site_config {}
+  subnet {
+    name           = "subnet1"
+    address_prefix = "10.0.1.0/24"
+  }
+
+  subnet {
+    name           = "subnet2"
+    address_prefix = "10.0.2.0/24"
+    security_group = azurerm_network_security_group.example.id
+  }
+
+  tags = {
+    environment = "Production"
+  }
 }
