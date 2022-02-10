@@ -9,11 +9,4 @@ variable "func-names" {
     type    = set(string)
     default = ["vijay-funcA","vijay-funcB","vijay-funcC"]
 }
-
-variable "vnet-name"{
-    type = string
-}
-
-variable "vnet-rg-name"{
-    type = string
 }*/
