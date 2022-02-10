@@ -1,27 +1,11 @@
-variable "app-rg" {
+variable "vnet-location" {
   type = string
 }
 
-variable "app-location" {
+variable "vnet-rg-name" {
   type = string
 }
 
-variable "func-name" {
-  type = string
-}
-
-variable "storage-name" {
-  type = string
-}
-
-variable "app-settings" {
-  type = map(string)
-}
-
-variable "plan-name" {
-  type = string
-}
-
-variable "storage_accesskey" {
+variable "vnet-name" {
   type = string
 }

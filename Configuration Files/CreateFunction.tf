@@ -1,7 +1,7 @@
 #locals{
 #    app-settings  =  merge(var.appsettings,tomap({APPINSIGHTS_INSTRUMENTATIONKEY = module.AppInsights.instrumentation_key}))
 #
-
+/*
 module "AppInsights"{
     for_each  =  var.func-names
     source = "../Modules/AppInsights"
@@ -30,3 +30,4 @@ module "FunctionApp"{
     app-settings       =    merge(var.appsettings,tomap({APPINSIGHTS_INSTRUMENTATIONKEY = module.AppInsights[each.value].instrumentation_key}))
     storage_accesskey  =    module.Storage.primary_access_key
 }
+*/

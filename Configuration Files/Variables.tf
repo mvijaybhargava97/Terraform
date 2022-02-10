@@ -1,4 +1,4 @@
-variable "appsettings" {
+/*variable "appsettings" {
     type    = map(string)
     default = {
         Key1 = "Value"
@@ -9,3 +9,11 @@ variable "func-names" {
     type    = set(string)
     default = ["vijay-funcA","vijay-funcB","vijay-funcC"]
 }
+
+variable "vnet-name"{
+    type = string
+}
+
+variable "vnet-rg-name"{
+    type = string
+}*

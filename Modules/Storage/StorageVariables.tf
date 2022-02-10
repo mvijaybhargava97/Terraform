@@ -17,3 +17,12 @@ variable "storage-tier"{
 variable "storage-replication"{
     type = string
 }
+
+variable "vnet-name"{
+    type = string
+}
+
+variable "vnet-rg-name"{
+    type = string
+}
+
