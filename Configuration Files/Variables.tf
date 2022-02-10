@@ -16,4 +16,4 @@ variable "vnet-name"{
 
 variable "vnet-rg-name"{
     type = string
-}*
+}*/
