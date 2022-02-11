@@ -1,7 +1,7 @@
 provider "azurerm" {
     subscription_id = "848bffad-a9ae-486f-a160-76388acf2e31"
     client_id = "785698ee-562d-4873-8edb-1fa690d82e5a"
-    client_secret = "B.y7Q~6Rj9tzQjmrIEZzFaNn~~tILH3QPGqr0"
+    client_secret = "shl7Q~zjLklTwjY2R0GVgzZuMuY1aR-KCtZ~Q"
     tenant_id = "808cc83e-a546-47e7-a03f-73a1ebba24f3"
     features {}
 }
