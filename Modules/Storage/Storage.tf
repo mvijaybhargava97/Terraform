@@ -11,7 +11,7 @@ data "azurerm_virtual_network" "vnet" {
 }*/
 
 locals{
-  subnet_ids = [for subnet_name in data.azurerm_virtual_network.vnet.subnets : concat(data.azurerm_virtual_network.vnet.id,"/subnets/",subnet_name) ]
+  subnet_ids = [for subnet_name in data.azurerm_virtual_network.vnet.subnets : join("",[data.azurerm_virtual_network.vnet.id,"/subnets/",subnet_name]) ]
 }
 
 resource "azurerm_storage_account" "storage" {
