@@ -3,11 +3,15 @@ data "azurerm_virtual_network" "vnet" {
   resource_group_name = var.vnet-rg-name
 }
 
-data "azurerm_subnet" "subnet" {
+/*data "azurerm_subnet" "subnet" {
   for_each             = data.azurerm_virtual_network.vnet.subnets
   name                 = each.key
   virtual_network_name = data.azurerm_virtual_network.vnet.name
   resource_group_name  = var.vnet-rg-name
+}*/
+
+locals{
+  subnet_ids = [for subnet_name in data.azurerm_virtual_network.vnet.subnets : concat(data.azurerm_virtual_network.vnet.id,"/subnets/",subnet_name) ]
 }
 
 resource "azurerm_storage_account" "storage" {
@@ -19,6 +23,6 @@ resource "azurerm_storage_account" "storage" {
   network_rules {
     default_action             = "Allow"
     ip_rules                   = []
-    virtual_network_subnet_ids = []
+    virtual_network_subnet_ids = local.subnet_ids
   }
 }

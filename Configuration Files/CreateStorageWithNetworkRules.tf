@@ -1,5 +1,5 @@
 
-module "Storage"{
+/*module "Storage"{
     source = "../Modules/Storage"
     storage-name         =    "vijaytfstorage"
     rg-name              =    azurerm_resource_group.app_grp.name
@@ -8,4 +8,4 @@ module "Storage"{
     storage-replication  =    "LRS"
     vnet-name            =    "vijaytfstorage"
     vnet-rg-name         =    azurerm_resource_group.app_grp.name
-}
+}*/
