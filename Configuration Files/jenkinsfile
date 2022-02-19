@@ -1,9 +1,10 @@
   pipeline {
-    agent {
-       node {
-         label none
-       } 
-    }
+    // agent {
+    //    node {
+    //      label "master"
+    //    } 
+    // }
+    agent any
 
     stages {
     //   stage('fetch_latest_code') {
