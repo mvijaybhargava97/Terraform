@@ -15,9 +15,9 @@
 
       stage('Terraform INIT and VALIDATE') {
         steps {
-          bat 'cd "Configuration Files"'
-          bat 'terraform init'
-          bat 'terraform validate'  
+          bat 'cd "Configuration Files"
+               terraform init
+               terraform validate'  
         }      
       }
 
