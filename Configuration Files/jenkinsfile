@@ -15,8 +15,8 @@
 
       stage('Terraform INIT and VALIDATE') {
         steps {
-          sh 'terraform init'
-          sh 'terraform validate'  
+          bat 'terraform init'
+          bat 'terraform validate'  
         }      
       }
 
@@ -30,7 +30,7 @@
 
       stage('Terraform PLAN') {
         steps {
-          sh 'terraform plan -out=tf.plan'
+          bat 'terraform plan -out=tf.plan'
         }
       }
 
@@ -44,7 +44,7 @@
 
       stage('TF Apply') {
         steps {
-          sh 'terraform apply --auto-approve'
+          bat 'terraform apply --auto-approve'
         }
       }
     } 
