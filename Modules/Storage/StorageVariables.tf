@@ -18,11 +18,11 @@ variable "storage-replication"{
     type = string
 }
 
-variable "vnet-name"{
-    type = string
-}
+# variable "vnet-name"{
+#     type = string
+# }
 
-variable "vnet-rg-name"{
-    type = string
-}
+# variable "vnet-rg-name"{
+#     type = string
+# }
 
