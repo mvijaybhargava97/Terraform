@@ -2,7 +2,7 @@
 module "Storage"{
     source = "../Modules/Storage"
     depends_on = [module.VNet]
-    storage-name         =    "vijaytfstorage"
+    storage-name         =    "vijaybhargavast"
     rg-name              =    azurerm_resource_group.app_grp.name
     rg-location          =    azurerm_resource_group.app_grp.location
     storage-tier         =    "Standard"
