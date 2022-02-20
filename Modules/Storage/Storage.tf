@@ -1,7 +1,7 @@
-data "azurerm_virtual_network" "vnet" {
-  name                = var.vnet-name
-  resource_group_name = var.vnet-rg-name
-}
+# data "azurerm_virtual_network" "vnet" {
+#   name                = var.vnet-name
+#   resource_group_name = var.vnet-rg-name
+# }
 
 /*data "azurerm_subnet" "subnet" {
   for_each             = data.azurerm_virtual_network.vnet.subnets
