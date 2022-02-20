@@ -10,9 +10,9 @@ data "azurerm_virtual_network" "vnet" {
   resource_group_name  = var.vnet-rg-name
 }*/
 
-locals{
-  subnet_ids = [for subnet_name in data.azurerm_virtual_network.vnet.subnets : join("",[data.azurerm_virtual_network.vnet.id,"/subnets/",subnet_name]) ]
-}
+# locals{
+#   subnet_ids = [for subnet_name in data.azurerm_virtual_network.vnet.subnets : join("",[data.azurerm_virtual_network.vnet.id,"/subnets/",subnet_name]) ]
+# }
 
 resource "azurerm_storage_account" "storage" {
   name                     = var.storage-name
