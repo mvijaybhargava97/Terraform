@@ -15,7 +15,7 @@
 
       stage('Terraform INIT and VALIDATE') {
         steps {
-          bat 'cd Configuration Files'
+          bat 'cd "Configuration Files"'
           bat 'terraform init'
           bat 'terraform validate'  
         }      
@@ -31,7 +31,7 @@
 
       stage('Terraform PLAN') {
         steps {
-          bat 'cd Configuration Files'
+          bat 'cd "Configuration Files"'
           bat 'terraform plan -out=tf.plan'
         }
       }
@@ -46,7 +46,7 @@
 
       stage('TF Apply') {
         steps {
-          bat 'cd Configuration Files'
+          bat 'cd "Configuration Files"'
           bat 'terraform apply --auto-approve'
         }
       }
