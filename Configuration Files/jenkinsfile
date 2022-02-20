@@ -23,31 +23,32 @@
 
       stage('Plan Approval') {
         steps {
-          script {
-            def userInput = input(id: 'confirm', message: 'Plan Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Plan terraform', name: 'confirm'] ])
-          }
+          input 'Proceed or Abort'
+          // script {
+          //   def userInput = input(id: 'confirm', message: 'Plan Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Plan terraform', name: 'confirm'] ])
+          // }
         }
       }
 
       stage('Terraform PLAN') {
         steps {
-          bat 'cd "Configuration Files"'
-          bat 'terraform plan -out=tf.plan'
-        }
+          bat '''cd "Configuration Files"
+          terraform plan'''        }
       }
 
       stage('Apply Approval') {
         steps {
-          script {
-            def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
-          }
+          input 'Proceed or Abort'
+          // script {
+          //   def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
+          // }
         }
       }
 
       stage('TF Apply') {
         steps {
-          bat 'cd "Configuration Files"'
-          bat 'terraform apply --auto-approve'
+          bat '''cd "Configuration Files"
+          terraform applyw'''        }
         }
       }
     } 
